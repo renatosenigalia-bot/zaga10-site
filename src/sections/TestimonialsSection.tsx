@@ -8,7 +8,7 @@ const testimonials = [
     name: 'Nome do Cliente',
     role: 'Diretor de Marketing',
     company: 'Empresa',
-    avatarSrc: '/images/testimonials/cliente-01.jpg',
+    avatarSrc: '/images/testimonials/cliente-01.svg',
   },
   {
     quote:
@@ -16,7 +16,7 @@ const testimonials = [
     name: 'Nome do Cliente',
     role: 'CEO',
     company: 'Empresa',
-    avatarSrc: '/images/testimonials/cliente-02.jpg',
+    avatarSrc: '/images/testimonials/cliente-02.svg',
   },
   {
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
     name: 'Nome do Cliente',
     role: 'Gerente de Marca',
     company: 'Empresa',
-    avatarSrc: '/images/testimonials/cliente-03.jpg',
+    avatarSrc: '/images/testimonials/cliente-03.svg',
   },
 ]
 

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       'Agência de comunicação especializada em branding, identidade visual e estratégia de conteúdo.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Zaga10 Comunicação',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: 'Zaga10 Comunicação — Branding, Design e Estratégia',
     description:
       'Agência de comunicação especializada em branding, identidade visual e estratégia de conteúdo.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,

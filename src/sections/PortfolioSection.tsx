@@ -4,31 +4,31 @@ import { Button } from '@/components/atoms/Button'
 
 const portfolioItems = [
   {
-    src: '/images/portfolio/nestle-campanha-institucional.jpg',
+    src: '/images/portfolio/nestle-campanha-institucional.svg',
     alt: 'Campanha institucional Nestlé Brasil — projeto Zaga10',
     client: 'Nestlé',
     category: 'Campanha Institucional',
   },
   {
-    src: '/images/portfolio/bayer-identidade-produto.jpg',
+    src: '/images/portfolio/bayer-identidade-produto.svg',
     alt: 'Identidade de produto Bayer — projeto Zaga10',
     client: 'Bayer',
     category: 'Identidade de Produto',
   },
   {
-    src: '/images/portfolio/apsen-branding-farmaceutico.jpg',
+    src: '/images/portfolio/apsen-branding-farmaceutico.svg',
     alt: 'Branding farmacêutico Apsen — projeto Zaga10',
     client: 'Apsen',
     category: 'Branding Farmacêutico',
   },
   {
-    src: '/images/portfolio/cliente-social-media.jpg',
+    src: '/images/portfolio/cliente-social-media.svg',
     alt: 'Projeto de social media — Zaga10',
     client: 'Marca Parceira',
     category: 'Social Media',
   },
   {
-    src: '/images/portfolio/cliente-campanha-digital.jpg',
+    src: '/images/portfolio/cliente-campanha-digital.svg',
     alt: 'Campanha digital — projeto Zaga10',
     client: 'Marca Parceira',
     category: 'Campanha Digital',
