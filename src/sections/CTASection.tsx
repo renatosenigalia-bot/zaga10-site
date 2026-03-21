@@ -1,3 +1,5 @@
+'use client'
+
 import { Container } from '@/components/atoms/Container'
 import { Button } from '@/components/atoms/Button'
 
