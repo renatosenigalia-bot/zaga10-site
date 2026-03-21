@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll behavior suave para âncoras */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove outline padrão, usa focus-visible para acessibilidade */
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid #C8F000;
+  outline-offset: 2px;
+}
+
+/* Scroll reveal — estado inicial */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeitar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
