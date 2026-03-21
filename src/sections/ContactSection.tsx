@@ -1,27 +1,22 @@
-import {
-  Envelope,
-  InstagramLogo,
-  LinkedinLogo,
-  Clock,
-} from '@phosphor-icons/react/dist/ssr'
+import { Mail, Instagram, Linkedin, Clock } from 'lucide-react'
 import { Container } from '@/components/atoms/Container'
 import { ContactForm } from '@/components/organisms/ContactForm'
 
 const contactInfo = [
   {
-    Icon: Envelope,
+    Icon: Mail,
     label: 'E-mail',
     value: 'contato@zaga10.com.br',
     href: 'mailto:contato@zaga10.com.br',
   },
   {
-    Icon: InstagramLogo,
+    Icon: Instagram,
     label: 'Instagram',
     value: '@zaga10comunicacao',
     href: 'https://www.instagram.com/zaga10comunicacao',
   },
   {
-    Icon: LinkedinLogo,
+    Icon: Linkedin,
     label: 'LinkedIn',
     value: 'Zaga10 Comunicação',
     href: 'https://www.linkedin.com/company/zaga10',
@@ -48,12 +43,10 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4xl">
-          {/* Formulário */}
           <div>
             <ContactForm />
           </div>
 
-          {/* Informações de contato */}
           <div className="flex flex-col gap-xl">
             <div>
               <h3 className="font-subtitle font-semibold text-h4 text-brand-navy mb-lg">
@@ -63,12 +56,7 @@ export function ContactSection() {
                 {contactInfo.map(({ Icon, label, value, href }) => (
                   <li key={label} className="flex items-center gap-md">
                     <div className="w-10 h-10 rounded-md bg-brand-offwhite flex items-center justify-center flex-shrink-0">
-                      <Icon
-                        size={20}
-                        weight="regular"
-                        className="text-brand-navy"
-                        aria-hidden="true"
-                      />
+                      <Icon size={20} strokeWidth={1.5} className="text-brand-navy" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="font-body text-caption text-brand-graphite uppercase tracking-wide">

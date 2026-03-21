@@ -1,40 +1,34 @@
-import {
-  PaintBrushBroad,
-  ChartLineUp,
-  Pen,
-  InstagramLogo,
-  MegaphoneSimple,
-} from '@phosphor-icons/react/dist/ssr'
+import { Palette, TrendingUp, PenLine, Instagram, Megaphone } from 'lucide-react'
 import { Container } from '@/components/atoms/Container'
 import { ServiceCard } from '@/components/molecules/ServiceCard'
 
 const services = [
   {
-    icon: PaintBrushBroad,
+    icon: Palette,
     title: 'Branding & Identidade Visual',
     description:
       'Criamos marcas com alma — do naming ao sistema visual completo, com identidade que dura.',
   },
   {
-    icon: ChartLineUp,
+    icon: TrendingUp,
     title: 'Estratégia de Conteúdo',
     description:
       'Posicionamento, tom de voz e calendário editorial alinhados aos objetivos do negócio.',
   },
   {
-    icon: Pen,
+    icon: PenLine,
     title: 'Design Gráfico & Editorial',
     description:
       'Materiais que comunicam e convertem — apresentações, catálogos, peças publicitárias.',
   },
   {
-    icon: InstagramLogo,
+    icon: Instagram,
     title: 'Social Media & Digital',
     description:
       'Gestão de redes sociais com estratégia, criatividade e métricas que importam.',
   },
   {
-    icon: MegaphoneSimple,
+    icon: Megaphone,
     title: 'Campanhas & Ativações',
     description:
       'Do conceito à produção — campanhas integradas que geram awareness e resultados mensuráveis.',

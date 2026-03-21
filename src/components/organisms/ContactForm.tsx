@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { CheckCircle, WarningCircle } from '@phosphor-icons/react'
+import { CheckCircle, AlertCircle } from 'lucide-react'
 import { Input } from '@/components/atoms/Input'
 import { Textarea } from '@/components/atoms/Textarea'
 import { Button } from '@/components/atoms/Button'
@@ -13,7 +13,6 @@ const schema = z.object({
   name: z.string().min(2, 'Nome deve ter ao menos 2 caracteres'),
   email: z.string().email('E-mail inválido'),
   message: z.string().min(20, 'Mensagem deve ter ao menos 20 caracteres'),
-  // honeypot — deve ficar vazio
   website: z.string().max(0, 'Campo inválido'),
 })
 
@@ -33,26 +32,18 @@ export function ContactForm() {
   })
 
   const onSubmit = async (data: FormData) => {
-    // Se honeypot preenchido, simular sucesso silenciosamente
     if (data.website) {
       setStatus('success')
       return
     }
-
     setStatus('loading')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          message: data.message,
-        }),
+        body: JSON.stringify({ name: data.name, email: data.email, message: data.message }),
       })
-
       if (!res.ok) throw new Error('Falha no envio')
-
       setStatus('success')
       reset()
     } catch {
@@ -63,7 +54,7 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div className="flex flex-col items-center justify-center gap-md p-2xl bg-green-50 border border-green-200 rounded-lg text-center">
-        <CheckCircle size={48} weight="fill" className="text-green-600" aria-hidden="true" />
+        <CheckCircle size={48} className="text-green-600" aria-hidden="true" />
         <h3 className="font-subtitle font-semibold text-h4 text-brand-navy">
           Mensagem enviada!
         </h3>
@@ -81,7 +72,6 @@ export function ContactForm() {
       className="flex flex-col gap-lg"
       noValidate
     >
-      {/* Honeypot — invisível para humanos, visível para bots */}
       <div aria-hidden="true" className="hidden" tabIndex={-1}>
         <input
           {...register('website')}
@@ -99,7 +89,6 @@ export function ContactForm() {
         error={errors.name?.message}
         autoComplete="name"
       />
-
       <Input
         {...register('email')}
         label="E-mail"
@@ -108,7 +97,6 @@ export function ContactForm() {
         error={errors.email?.message}
         autoComplete="email"
       />
-
       <Textarea
         {...register('message')}
         label="Mensagem"
@@ -118,20 +106,14 @@ export function ContactForm() {
 
       {status === 'error' && (
         <div className="flex items-center gap-sm p-md bg-red-50 border border-red-200 rounded-md" role="alert">
-          <WarningCircle size={20} weight="fill" className="text-red-500 flex-shrink-0" aria-hidden="true" />
+          <AlertCircle size={20} className="text-red-500 flex-shrink-0" aria-hidden="true" />
           <p className="font-body text-body-sm text-red-700">
             Ops, erro ao enviar. Por favor, tente novamente.
           </p>
         </div>
       )}
 
-      <Button
-        type="submit"
-        variant="primary"
-        size="lg"
-        fullWidth
-        loading={status === 'loading'}
-      >
+      <Button type="submit" variant="primary" size="lg" fullWidth loading={status === 'loading'}>
         Enviar mensagem
       </Button>
     </form>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { List, X } from '@phosphor-icons/react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/atoms/Button'
 
 const navLinks = [
@@ -22,7 +22,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Bloquear scroll do body quando menu aberto
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -41,7 +40,6 @@ export function Navbar() {
         ].join(' ')}
       >
         <div className="max-w-[1280px] mx-auto px-md lg:px-xl py-md flex items-center justify-between">
-          {/* Logo */}
           <a href="#" aria-label="Zaga10 Comunicação — página inicial">
             <Image
               src="/images/logo/zaga10-logo-dark.svg"
@@ -52,7 +50,6 @@ export function Navbar() {
             />
           </a>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-xl" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <a
@@ -65,7 +62,6 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button
               variant="secondary"
@@ -77,7 +73,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile hambúrguer */}
           <button
             className="lg:hidden text-white p-sm"
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -85,12 +80,11 @@ export function Navbar() {
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <X size={28} /> : <List size={28} />}
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </header>
 
-      {/* Mobile menu overlay */}
       <nav
         id="mobile-menu"
         aria-label="Menu de navegação mobile"

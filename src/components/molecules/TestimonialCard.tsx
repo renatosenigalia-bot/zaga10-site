@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Quotes } from '@phosphor-icons/react'
+import { Quote } from 'lucide-react'
 
 interface TestimonialCardProps {
   quote: string
@@ -18,10 +18,9 @@ export function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <div className="flex flex-col gap-md p-xl bg-white border border-brand-graphite/10 rounded-lg shadow-card min-h-48">
-      <Quotes
+      <Quote
         size={32}
-        weight="fill"
-        className="text-brand-electric"
+        className="text-brand-electric fill-brand-electric"
         aria-hidden="true"
       />
       <blockquote className="font-body font-medium text-body-lg text-brand-navy italic flex-1">
