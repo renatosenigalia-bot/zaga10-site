@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/atoms/Button'
+import { Logo } from '@/components/atoms/Logo'
 
 const navLinks = [
   { label: 'Serviços', href: '#servicos' },
@@ -41,13 +41,7 @@ export function Navbar() {
       >
         <div className="max-w-[1280px] mx-auto px-md lg:px-xl py-md flex items-center justify-between">
           <a href="#" aria-label="Zaga10 Comunicação — página inicial">
-            <Image
-              src="/images/logo/zaga10-logo-dark.svg"
-              alt="Zaga10 Comunicação"
-              width={140}
-              height={40}
-              priority
-            />
+            <Logo className="text-[2rem] leading-none" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-xl" aria-label="Navegação principal">

@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { Instagram, Linkedin } from 'lucide-react'
 import { Container } from '@/components/atoms/Container'
+import { Logo } from '@/components/atoms/Logo'
 
 function WhatsAppIcon({ size = 24 }: { size?: number }) {
   return (
@@ -49,13 +49,7 @@ export function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3xl">
           <div className="flex flex-col gap-md">
-            <Image
-              src="/images/logo/zaga10-logo-dark.svg"
-              alt=""
-              aria-hidden="true"
-              width={128}
-              height={36}
-            />
+            <Logo className="text-[2rem] leading-none" />
             <p className="font-body text-body text-white/60 max-w-xs">
               Estratégia que defende. Criatividade que ataca.
             </p>
