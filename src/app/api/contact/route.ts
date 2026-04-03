@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { resend } from '@/lib/resend'
 
 const schema = z.object({
   name: z.string().min(2).max(100),
@@ -20,6 +19,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Resend não configurado — retorna sucesso sem enviar e-mail
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('[contact/route] RESEND_API_KEY não configurada. E-mail não enviado.')
+      return NextResponse.json({ success: true }, { status: 200 })
+    }
+
+    const { resend } = await import('@/lib/resend')
     const { name, email, message } = parsed.data
     const contactEmail = process.env.CONTACT_EMAIL || 'contato@zaga10.com.br'
 
