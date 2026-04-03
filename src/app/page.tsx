@@ -4,6 +4,7 @@ import { HeroSection } from '@/sections/HeroSection'
 import { AboutSection } from '@/sections/AboutSection'
 import { ServicesSection } from '@/sections/ServicesSection'
 import { PortfolioSection } from '@/sections/PortfolioSection'
+import { CasesSection } from '@/sections/CasesSection'
 import { TestimonialsSection } from '@/sections/TestimonialsSection'
 import { CTASection } from '@/sections/CTASection'
 import { ContactSection } from '@/sections/ContactSection'
@@ -23,6 +24,9 @@ export default function HomePage() {
         </ScrollReveal>
         <ScrollReveal>
           <PortfolioSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <CasesSection />
         </ScrollReveal>
         <ScrollReveal>
           <TestimonialsSection />
